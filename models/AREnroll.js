@@ -2,15 +2,15 @@ var mongoose = require("mongoose");
 
 // schema
 var arenrollSchema = mongoose.Schema({
- arcurrent:{type:String},
- arar:{type:String},
- arroom:{type:String},
- arpurpose:{type:String},
- arname:{type:String},
- arsort:{type:String},
- arsex:{type:String},
- arcurrentgrade:{type:String},
- arpwd:{type:Number, required:true},
+ artwoonecurrent:{type:String},
+ twoone:{type:String},
+ artwooneroom:{type:String},
+ artwoonepurpose:{type:String},
+ artwoonename:{type:String},
+ artwoonesort:{type:String},
+ artwoonesex:{type:String},
+ artwoonecurrentgrade:{type:String},
+ artwoonepwd:{type:Number, required:true},
 },{
  toObject:{virtuals:true}
 });

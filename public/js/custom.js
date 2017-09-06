@@ -76,7 +76,7 @@ function leadingZeros(n, digits) {
 //
 //아래는 오늘 날짜/시간 구현 코드 시작
 function realtimeClockar() {
-  document.getElementById("arcurrent").value = getTimeStamp();
+  document.getElementById("artwoonecurrent").value = getTimeStamp();
   setTimeout("realtimeClockar()", 1000);
 }
 
@@ -102,7 +102,10 @@ function leadingZeros(n, digits) {
 
 // 테이블
 $(document).ready(function() {
-    $('#enrolltable').DataTable();
+    $('#enrolltable').DataTable( {
+        "order": [[ 3, "desc" ]]
+    } );
+    $('table.display').DataTable();
 } );
 
 // 히든 테이블
