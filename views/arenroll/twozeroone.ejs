@@ -1,0 +1,99 @@
+<% include ../parts/head %>
+<% include ../parts/othernav %>
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">AR 2-1 신청</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+
+          <div class="panel-body">
+
+              <form role="form" action="/arenroll" method="post">
+                  <fieldset>
+
+                    <body onload="realtimeClockar()">
+                    * 신청 시간
+                      <div class="form-group">
+                          <input class="form-control" value="" placeholder="" id="arcurrent" name="arcurrent" type="text" readonly>
+                          -> 신청할 때 시간!!!!!!!!! 반드시 확인 부탁드립니다.<br>
+                          -> 오후 5시 00분 ~ 오후 9시 50분 사이에만 신청 가능합니다.
+                      </div>
+                    </body>
+
+                    * 분류
+                      <div class="form-group">
+                          <input class="form-control" placeholder="" id="arar" name="arar" value="AR" type="text" readonly>
+                      </div>
+
+                      * 세미나실
+                      <div class="form-group">
+                          <input class="form-control" placeholder="" id="arroom" name="arroom" value="2-1" type="text" readonly>
+                      </div>
+
+                      * (필수입력 아님) 이용목적
+                      <div class="form-group">
+                        <div class="form-group">
+                            <input class="form-control" placeholder="대표학생만 입력하세요" value="" id="arpurpose" name="arpurpose" type="text" autofocus>
+                            -> 동아리 : 동아리명<br> -> 동아리는 아닌데 여러 명이 신청하는 경우 : 공통의 이용목적(ex. 한국사 수행)을 입력해주세요.
+                        </div>
+                      </div>
+
+                      * 이름
+                      <div class="form-group">
+                          <input class="form-control" placeholder="반드시 생기부에 입력된 이름이랑 같아야 합니다." id="arname" name="arname" type="text">
+                      </div>
+
+                      * 계열
+                      <div class="form-group">
+                        <select class="form-control" id="arsort" name="arsort" type="text">
+                          <option>국내</option>
+                          <option>국제</option>
+                        </select>
+                      </div>
+
+                      * 성별
+                      <div class="form-group">
+                        <select class="form-control" id="arsex" name="arsex" type="text">
+                          <option>남자</option>
+                          <option>여자</option>
+                        </select>
+                      </div>
+
+                      * 학년
+                      <div class="form-group">
+                        <select class="form-control" id="arcurrentgrade" name="arcurrentgrade" type="text">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                      </div>
+
+                      * 수정 및 삭제를 위한 비밀번호
+                      <div class="form-group">
+                          <input class="form-control" placeholder="4자리 숫자로만 입력하세요" id="arpwd" name="arpwd" type="text">
+                          -> 4자리의 숫자로만 입력해주세요.
+                      </div>
+
+                      <br>
+                  </fieldset>
+
+                  <button type="submit" class="btn btn-lg btn-success btn-block" id="submitbtn">신청하기</button>
+                  <input class="form-control" id="alertbtn" type="text" value="신청 시간이 아닙니다^^!" disabled>
+
+              </form>
+          </div> <br><br>
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+</div>
+<!-- /#page-wrapper -->
+
+<% include ../parts/footer %>

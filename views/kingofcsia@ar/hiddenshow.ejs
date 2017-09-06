@@ -1,0 +1,51 @@
+<% include ../parts/head %>
+<% include ../parts/othernav %>
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header"> 관리자 - 신청현황 </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+
+          <div class="post-info" id="postinfo">
+          <div><span>생성됨</span> : <%= arenroll.current %> </div>
+          </div>
+         <br>
+
+         <div id="backsubmitbtn">
+           <form action="/kingofcsia@ar/<%= arenroll._id %>?_method=delete" method="post">
+             <a class="btn btn-danger" onclick="confirm('정말로 삭제하시겠습니까?')?this.parentElement.submit():null;">삭제</a>
+           </form>
+         </div>
+          <br>
+
+          <h3 id="showshow">
+          <div>분류 : <%= arenroll.arorop %></div>
+          <div>호실 : <%= arenroll.room %></div>
+          <div>이용목적 : <%= arenroll.purpose %></div>
+          <div>신청자 : <%= arenroll.name %></div>
+          <div>계열 : <%= arenroll.sort %></div>
+          <div>성별 : <%= arenroll.sex %></div>
+          <div>학년 : <%= arenroll.currentgrade %></div>
+          <div>반 : <%= arenroll.currentclass %></div>
+          </h3>
+
+          <br>
+          <div id="backsubmitbtn">
+            <a class="btn btn-default" href="/kingofcsia@ar">뒤로가기</a>
+            <a class="btn btn-primary" href="/kingofcsia@ar/<%= arenroll._id %>/edit">수정</a>
+          </div>
+          <br><br>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+</div>
+<!-- /#page-wrapper -->
+
+<% include ../parts/footer %>

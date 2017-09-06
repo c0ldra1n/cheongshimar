@@ -1,0 +1,109 @@
+<% include ../parts/head %>
+<% include ../parts/othernav %>
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">관리자 - 선야 신청정보 수정</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+
+          <div class="panel-body">
+
+              <form role="form" action="/kingofcsia@/<%= enroll._id %>?_method=put" method="post">
+                  <fieldset>
+                    * 분류
+                    <div class="form-group">
+                      <div class="form-group">
+                          <input class="form-control" placeholder="" value="<%= enroll.arorop %>" id="arorop" name="arorop" type="text" readonly>
+                      </div>
+                    </div>
+
+                    * 세미나실
+                    <div class="form-group">
+                    <select class="form-control" id="room" name="room" type="text">
+                      <option>X</option>
+                      <option>2-1</option>
+                      <option>2-2</option>
+                      <option>2-3</option>
+                      <option>2-4</option>
+                      <option>2-5</option>
+                      <option>2-6</option>
+                      <option>5-1</option>
+                      <option>5-2</option>
+                      <option>5-3</option>
+                      <option>5-4</option>
+                      <option>5-5</option>
+                      <option>5-6</option>
+                      <option>5-7</option>
+                    </select> -> <a href="/roomnumber2" target="_blank">세미나실 번호 확인 (2층)</a><br> -> <a href="/roomnumber5" target="_blank">세미나실 번호 확인 (5층)</a>
+                    </div>
+
+                    * 이용목적
+                    <div class="form-group">
+                      <div class="form-group">
+                          <input class="form-control" placeholder="" id="purpose" name="purpose" type="text" value="<%= enroll.purpose %>">
+                          -> 동아리 : 동아리명<br> -> 동아리는 아닌데 여러 명이 신청하는 경우 : 공통의 이용목적(ex. 한국사 수행)을 반드시 입력해주세요.
+                      </div>
+                    </div>
+
+                    * 이름
+                    <div class="form-group">
+                        <input class="form-control" placeholder="반드시 생기부에 입력된 이름이랑 같아야 합니다." value="<%= enroll.name %>" type="text" id="name" name="name">
+                    </div>
+
+                    * 계열
+                    <div class="form-group">
+                      <select class="form-control" type="text" id="sort" name="sort">
+                        <option>국내</option>
+                        <option>국제</option>
+                      </select>
+                    </div>
+
+                    * 성별
+                    <div class="form-group">
+                      <select class="form-control" type="text" id="sex" name="sex">
+                        <option>남자</option>
+                        <option>여자</option>
+                      </select>
+                    </div>
+
+                    * 학년
+                    <div class="form-group">
+                      <select class="form-control" type="text" id="currentgrade" name="currentgrade">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                      </select>
+                    </div>
+
+                    * 반
+                    <div class="form-group">
+                      <select class="form-control" type="text" id="currentclass" name="currentclass">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                      </select>
+                    </div>
+                    <br>
+                  </fieldset>
+
+                  <div id="backsubmitbtn">
+                    <button type="submit" class="btn btn-lg btn-success btn-block" href="/kingofcsia@/<%= enroll._id %>/edit">수정완료</a>
+                  </div>
+              </form>
+          </div> <br><br><br><br>
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+</div>
+<!-- /#page-wrapper -->
+
+<% include ../parts/footer %>
