@@ -11,33 +11,6 @@ router.get("/", function(req, res){
  });
 });
 
-// Index
-router.get("/arindex2", function(req, res){
- AREnroll.find({})
- .exec(function(err, arenroll){
-  if(err) return res.json(err);
-  res.render("arenroll/arindex2", {arenroll:arenroll});
- });
-});
-
-// Index
-router.get("/arindex5", function(req, res){
- AREnroll.find({})
- .exec(function(err, arenroll){
-  if(err) return res.json(err);
-  res.render("arenroll/arindex5", {arenroll:arenroll});
- });
-});
-
-// Index
-router.get("/arindexorchestra", function(req, res){
- AREnroll.find({})
- .exec(function(err, arenroll){
-  if(err) return res.json(err);
-  res.render("arenroll/arindexorchestra", {arenroll:arenroll});
- });
-});
-
 // New
 router.get("/arnew", function(req, res){
  res.render("arenroll/arnew");
@@ -94,6 +67,69 @@ router.get("/twosix", function(req, res){
  .exec(function(err, arenroll){
   if(err) return res.json(err);
   res.render("arenroll/twosix", {arenroll:arenroll});
+ });
+});
+
+// New
+router.get("/fiveone", function(req, res){
+ AREnroll.find({})
+ .exec(function(err, arenroll){
+  if(err) return res.json(err);
+  res.render("arenroll/fiveone", {arenroll:arenroll});
+ });
+});
+
+// New
+router.get("/fivetwo", function(req, res){
+ AREnroll.find({})
+ .exec(function(err, arenroll){
+  if(err) return res.json(err);
+  res.render("arenroll/fivetwo", {arenroll:arenroll});
+ });
+});
+
+// New
+router.get("/fivethree", function(req, res){
+ AREnroll.find({})
+ .exec(function(err, arenroll){
+  if(err) return res.json(err);
+  res.render("arenroll/fivethree", {arenroll:arenroll});
+ });
+});
+
+// New
+router.get("/fivefour", function(req, res){
+ AREnroll.find({})
+ .exec(function(err, arenroll){
+  if(err) return res.json(err);
+  res.render("arenroll/fivefour", {arenroll:arenroll});
+ });
+});
+
+// New
+router.get("/fivefive", function(req, res){
+ AREnroll.find({})
+ .exec(function(err, arenroll){
+  if(err) return res.json(err);
+  res.render("arenroll/fivefive", {arenroll:arenroll});
+ });
+});
+
+// New
+router.get("/fivesix", function(req, res){
+ AREnroll.find({})
+ .exec(function(err, arenroll){
+  if(err) return res.json(err);
+  res.render("arenroll/fivesix", {arenroll:arenroll});
+ });
+});
+
+// New
+router.get("/fiveseven", function(req, res){
+ AREnroll.find({})
+ .exec(function(err, arenroll){
+  if(err) return res.json(err);
+  res.render("arenroll/fiveseven", {arenroll:arenroll});
  });
 });
 

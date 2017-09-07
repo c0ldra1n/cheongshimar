@@ -14,15 +14,60 @@
 
           <div class="panel-body">
 
-          <h3>-> <a href="/roomnumber2" target="_blank">세미나실 번호 확인 (2층)</a></h3>
-          <h3>-> <a href="/roomnumber5" target="_blank">세미나실 번호 확인 (5층)</a></h3> <br>
+            <table id="enrolltable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+             <thead>
+              <tr>
+                <th class="current">신청시간</th>
+                <th class="arorop">분류</th>
+                <th class="room">세미나실</th>
+                <th class="purpose">이용목적</th>
+                <th class="name">신청자</th>
+                <th class="sort">계열</th>
+                <th class="sex">성별</th>
+                <th class="currentgrade">학년</th>
+              </tr>
+             </thead>
 
-            <ul>
-            <h3><a href="arenroll/arindex2"><div>2층</div></a></h3><br>
-            <h3><a href="arenroll/arindex5"><div>5층</div></a></h3><br>
-            <h3><a href="arenroll/arindexorchestra"><div>오케스트라</div></a></h3>            
-            </ul>
+             <tbody>
+              <% if(arenroll == null || arenroll.length == 0){ %>
+               <tr>
+                <td class="noData" colspan=100> 앗, 아무도 신청하지 않았네요! </td>
+               </tr>
+              <% } %>
 
+              <% arenroll.forEach(function(arenroll) { %>
+               <tr>
+                <td class="current">
+                  <div><%= arenroll.arcurrent %></div>
+                </td>
+                <td class="arorop">
+                  <div><%= arenroll.arar %></div>
+                </td>
+                <td class="room">
+                  <div><%= arenroll.arroom %></div>
+                </td>
+                <td class="purpose">
+                 <div><%= arenroll.arpurpose %></div>
+                </td>
+                <td class="name">
+                  <div><%= arenroll.arname %></div>
+                </td>
+                <td class="sort">
+                 <div><%= arenroll.arsort %></div>
+                </td>
+                <td class="sex">
+                 <div><%= arenroll.arsex %></div>
+                </td>
+                <td class="currentgrade">
+                 <div><%= arenroll.arcurrentgrade %></div>
+                </td>
+              </tr>
+              <% }) %>
+
+             </tbody>
+            </table>
+            -> 세미나실 번호를 검색 Form에 입력하시면 데이터가 시간 순으로 정렬됩니다.(내림차순)<br>
+            -> 2-6, 5-2와 같은 형식으로 입력해 주세요.
           </div> <br><br>
 
         </div>

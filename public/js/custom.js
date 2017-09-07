@@ -163,8 +163,8 @@ $(document).ready(function() {
 
 //2-2 신청
 $(document).ready(function() {
-  $(".search21").ready(function () {
-    var searchTerm = $(".search21").val();
+  $(".search").ready(function () {
+    var searchTerm = $(".search").val();
     var listItem = $('.results tbody').children('tr');
     var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
 
@@ -188,3 +188,12 @@ $(document).ready(function() {
     else {$('.no-result').hide();}
 		  });
 });
+
+//
+function setEvent(){
+    $("#submitbtn").unbind("click").bind("click",function(){
+        alert("신청됬음 ㅇㅇ");
+    });
+}
+setEvent();
+setEvent();
