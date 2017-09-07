@@ -34,7 +34,11 @@
                       <hr>
 
                       <h3>2-1 신청현황</h3>
-                      <table id="arview" cellspacing="0" width="100%">
+                      <div class="form-group pull-right">
+                        <input type="text" class="search form-control" value="2-1" disabled>
+                      </div>
+                      <span class="counter pull-right"></span>
+                      <table class="table table-hover table-bordered results">
                        <thead>
                         <tr>
                           <th class="current">신청시간</th>
@@ -47,7 +51,6 @@
                           <th class="currentgrade">학년</th>
                         </tr>
                        </thead>
-
                        <tbody>
                         <% if(arenroll == null || arenroll.length == 0){ %>
                          <tr>
@@ -82,9 +85,8 @@
                            <div><%= arenroll.arcurrentgrade %></div>
                           </td>
                         <% }) %>
-
                        </tbody>
-                      </table>
+                     </table>
 
                       <hr>
 

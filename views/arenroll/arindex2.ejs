@@ -13,12 +13,16 @@
         <div class="col-lg-12">
 
           <h3>2-1 신청현황</h3>
-          <table id="enrolltable" cellspacing="0" width="100%">
+          <div class="form-group pull-right">
+            <input type="text" class="search form-control" value="2-1" disabled>
+          </div>
+          <span class="counter pull-right"></span>
+          <table class="table table-hover table-bordered results">
            <thead>
             <tr>
               <th class="current">신청시간</th>
               <th class="arorop">분류</th>
-              <th class="room">호실</th>
+              <th class="room">세미나실</th>
               <th class="purpose">이용목적</th>
               <th class="name">신청자</th>
               <th class="sort">계열</th>
@@ -26,7 +30,6 @@
               <th class="currentgrade">학년</th>
             </tr>
            </thead>
-
            <tbody>
             <% if(arenroll == null || arenroll.length == 0){ %>
              <tr>
@@ -49,7 +52,7 @@
                <div><%= arenroll.arpurpose %></div>
               </td>
               <td class="name">
-                <a href="/arenroll/<%= arenroll._id %>"><div><%= arenroll.arname %></div></a>
+                <div><%= arenroll.arname %></div>
               </td>
               <td class="sort">
                <div><%= arenroll.arsort %></div>
@@ -61,19 +64,22 @@
                <div><%= arenroll.arcurrentgrade %></div>
               </td>
             <% }) %>
-
            </tbody>
-          </table>
+         </table>
 
           <br><hr>
 
           <h3>2-2 신청현황</h3>
-          <table id="enrolltable" cellspacing="0" width="100%">
+          <div class="form-group pull-right">
+            <input type="text" class="search form-control" value="2-2" disabled>
+          </div>
+          <span class="counter pull-right"></span>
+          <table class="table table-hover table-bordered results">
            <thead>
             <tr>
               <th class="current">신청시간</th>
               <th class="arorop">분류</th>
-              <th class="room">호실</th>
+              <th class="room">세미나실</th>
               <th class="purpose">이용목적</th>
               <th class="name">신청자</th>
               <th class="sort">계열</th>
@@ -81,7 +87,6 @@
               <th class="currentgrade">학년</th>
             </tr>
            </thead>
-
            <tbody>
             <% if(arenroll == null || arenroll.length == 0){ %>
              <tr>
@@ -92,254 +97,33 @@
             <% arenroll.forEach(function(arenroll) { %>
              <tr>
               <td class="current">
-                 <div><%= arenroll.artwotwocurrent %></div>
+                 <div><%= arenroll.arcurrent %></div>
               </td>
               <td class="arorop">
-                <div><%= arenroll.twotwo %></div>
+                <div><%= arenroll.arar %></div>
               </td>
               <td class="room">
-               <div><%= arenroll.artwotworoom %></div>
+               <div><%= arenroll.arroom %></div>
               </td>
               <td class="purpose">
-               <div><%= arenroll.artwotwopurpose %></div>
+               <div><%= arenroll.arpurpose %></div>
               </td>
               <td class="name">
-                <div><%= arenroll.artwotwoname %></div>
+                <div><%= arenroll.arname %></div>
               </td>
               <td class="sort">
-               <div><%= arenroll.artwotwosort %></div>
+               <div><%= arenroll.arsort %></div>
               </td>
               <td class="sex">
-               <div><%= arenroll.artwotwosex %></div>
+               <div><%= arenroll.arsex %></div>
               </td>
               <td class="currentgrade">
-               <div><%= arenroll.artwotwocurrentgrade %></div>
+               <div><%= arenroll.arcurrentgrade %></div>
               </td>
             <% }) %>
-
            </tbody>
-          </table>
+         </table>
 
-          <br><hr>
-
-          <h3>2-3 신청현황</h3>
-          <table id="enrolltable" cellspacing="0" width="100%">
-           <thead>
-            <tr>
-              <th class="current">신청시간</th>
-              <th class="arorop">분류</th>
-              <th class="room">호실</th>
-              <th class="purpose">이용목적</th>
-              <th class="name">신청자</th>
-              <th class="sort">계열</th>
-              <th class="sex">성별</th>
-              <th class="currentgrade">학년</th>
-            </tr>
-           </thead>
-
-           <tbody>
-            <% if(arenroll == null || arenroll.length == 0){ %>
-             <tr>
-              <td class="noData" colspan=100> 앗, 아무도 신청하지 않았네요! </td>
-             </tr>
-            <% } %>
-
-            <% arenroll.forEach(function(arenroll) { %>
-             <tr>
-              <td class="current">
-                 <div><%= arenroll.artwothreecurrent %></div>
-              </td>
-              <td class="arorop">
-                <div><%= arenroll.twothree %></div>
-              </td>
-              <td class="room">
-               <div><%= arenroll.artwothreeroom %></div>
-              </td>
-              <td class="purpose">
-               <div><%= arenroll.artwothreepurpose %></div>
-              </td>
-              <td class="name">
-                <div><%= arenroll.artwothreename %></div>
-              </td>
-              <td class="sort">
-               <div><%= arenroll.artwothreesort %></div>
-              </td>
-              <td class="sex">
-               <div><%= arenroll.artwothreesex %></div>
-              </td>
-              <td class="currentgrade">
-               <div><%= arenroll.artwothreecurrentgrade %></div>
-              </td>
-            <% }) %>
-
-           </tbody>
-          </table>
-
-          <br><hr>
-
-          <h3>2-4 신청현황</h3>
-          <table id="enrolltable" cellspacing="0" width="100%">
-           <thead>
-            <tr>
-              <th class="current">신청시간</th>
-              <th class="arorop">분류</th>
-              <th class="room">호실</th>
-              <th class="purpose">이용목적</th>
-              <th class="name">신청자</th>
-              <th class="sort">계열</th>
-              <th class="sex">성별</th>
-              <th class="currentgrade">학년</th>
-            </tr>
-           </thead>
-
-           <tbody>
-            <% if(arenroll == null || arenroll.length == 0){ %>
-             <tr>
-              <td class="noData" colspan=100> 앗, 아무도 신청하지 않았네요! </td>
-             </tr>
-            <% } %>
-
-            <% arenroll.forEach(function(arenroll) { %>
-             <tr>
-              <td class="current">
-                 <div><%= arenroll.artwofourcurrent %></div>
-              </td>
-              <td class="arorop">
-                <div><%= arenroll.twofour %></div>
-              </td>
-              <td class="room">
-               <div><%= arenroll.artwofourroom %></div>
-              </td>
-              <td class="purpose">
-               <div><%= arenroll.artwofourpurpose %></div>
-              </td>
-              <td class="name">
-                <div><%= arenroll.artwofourname %></div>
-              </td>
-              <td class="sort">
-               <div><%= arenroll.artwofoursort %></div>
-              </td>
-              <td class="sex">
-               <div><%= arenroll.artwofoursex %></div>
-              </td>
-              <td class="currentgrade">
-               <div><%= arenroll.artwofourcurrentgrade %></div>
-              </td>
-            <% }) %>
-
-           </tbody>
-          </table>
-
-          <br><hr>
-
-          <h3>2-5 신청현황</h3>
-          <table id="enrolltable" cellspacing="0" width="100%">
-           <thead>
-            <tr>
-              <th class="current">신청시간</th>
-              <th class="arorop">분류</th>
-              <th class="room">호실</th>
-              <th class="purpose">이용목적</th>
-              <th class="name">신청자</th>
-              <th class="sort">계열</th>
-              <th class="sex">성별</th>
-              <th class="currentgrade">학년</th>
-            </tr>
-           </thead>
-
-           <tbody>
-            <% if(arenroll == null || arenroll.length == 0){ %>
-             <tr>
-              <td class="noData" colspan=100> 앗, 아무도 신청하지 않았네요! </td>
-             </tr>
-            <% } %>
-
-            <% arenroll.forEach(function(arenroll) { %>
-             <tr>
-              <td class="current">
-                 <div><%= arenroll.artwofivecurrent %></div>
-              </td>
-              <td class="arorop">
-                <div><%= arenroll.twofive %></div>
-              </td>
-              <td class="room">
-               <div><%= arenroll.artwofiveroom %></div>
-              </td>
-              <td class="purpose">
-               <div><%= arenroll.artwofivepurpose %></div>
-              </td>
-              <td class="name">
-                <div><%= arenroll.artwofivename %></div>
-              </td>
-              <td class="sort">
-               <div><%= arenroll.artwofivesort %></div>
-              </td>
-              <td class="sex">
-               <div><%= arenroll.artwofivesex %></div>
-              </td>
-              <td class="currentgrade">
-               <div><%= arenroll.artwofivecurrentgrade %></div>
-              </td>
-            <% }) %>
-
-           </tbody>
-          </table>
-
-          <br><hr>
-
-          <h3>2-6 신청현황</h3>
-          <table id="enrolltable" cellspacing="0" width="100%">
-           <thead>
-            <tr>
-              <th class="current">신청시간</th>
-              <th class="arorop">분류</th>
-              <th class="room">호실</th>
-              <th class="purpose">이용목적</th>
-              <th class="name">신청자</th>
-              <th class="sort">계열</th>
-              <th class="sex">성별</th>
-              <th class="currentgrade">학년</th>
-            </tr>
-           </thead>
-
-           <tbody>
-            <% if(arenroll == null || arenroll.length == 0){ %>
-             <tr>
-              <td class="noData" colspan=100> 앗, 아무도 신청하지 않았네요! </td>
-             </tr>
-            <% } %>
-
-            <% arenroll.forEach(function(arenroll) { %>
-             <tr>
-              <td class="current">
-                 <div><%= arenroll.artwosixcurrent %></div>
-              </td>
-              <td class="arorop">
-                <div><%= arenroll.twosix %></div>
-              </td>
-              <td class="room">
-               <div><%= arenroll.artwosixroom %></div>
-              </td>
-              <td class="purpose">
-               <div><%= arenroll.artwosixpurpose %></div>
-              </td>
-              <td class="name">
-                <div><%= arenroll.artwosixname %></div>
-              </td>
-              <td class="sort">
-               <div><%= arenroll.artwosixsort %></div>
-              </td>
-              <td class="sex">
-               <div><%= arenroll.artwosixsex %></div>
-              </td>
-              <td class="currentgrade">
-               <div><%= arenroll.artwosixcurrentgrade %></div>
-              </td>
-            </tr>
-            <% }) %>
-
-           </tbody>
-          </table>
           <br><br><br>
         </div>
         <!-- /.col-lg-12 -->
