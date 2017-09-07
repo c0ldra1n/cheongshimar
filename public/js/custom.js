@@ -123,7 +123,7 @@ todayy = new Date();
 c_time = leadingZeros(todayy.getHours(), 2) +
          leadingZeros(todayy.getMinutes(), 2);
 
-if (c_time >=1000 && c_time <=2159)
+if (c_time >=1700 && c_time <=2159)
 {
   $("#submitbtn").show();
   $("#alertbtn").hide();
@@ -192,7 +192,7 @@ $(document).ready(function() {
 //
 function setEvent(){
     $("#submitbtn").unbind("click").bind("click",function(){
-        alert("신청됬음 ㅇㅇ");
+        alert("신청되었습니다.");
     });
 }
 setEvent();
