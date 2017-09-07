@@ -4,7 +4,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">AR 2-1 신청</h1>
+            <h1 class="page-header">AR 2-6 신청</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -17,10 +17,10 @@
               <form role="form" action="/arenroll" method="post">
                   <fieldset>
 
-                    <body onload="realtimeClocktwoone()">
+                    <body onload="realtimeClockar()">
                     * 신청 시간
                       <div class="form-group">
-                          <input class="form-control" value="" placeholder="" id="artwoonecurrent" name="artwoonecurrent" type="text" readonly>
+                          <input class="form-control" value="" placeholder="" id="ardtwosixcurrent" name="ardtwosixcurrent" type="text" readonly>
                           -> 신청할 때 시간!!!!!!!!! 반드시 확인 부탁드립니다.<br>
                           -> 오후 5시 00분 ~ 오후 9시 50분 사이에만 신청 가능합니다.
                       </div>
@@ -28,13 +28,13 @@
 
                     * 분류
                       <div class="form-group">
-                          <input class="form-control" placeholder="" id="twoone" name="twoone" value="AR" type="text" readonly>
+                          <input class="form-control" placeholder="" id="dtwosix" name="dtwosix" value="AR" type="text" readonly>
                       </div>
 
                       <hr><hr>
 
                       <h3>2-1 신청현황</h3>
-                      <table id="twooneview" class="table table-striped table-bordered display" cellspacing="0" width="100%">
+                      <table id="enrolltable" class="table table-striped table-bordered display" cellspacing="0" width="100%">
                        <thead>
                         <tr>
                           <th class="current">신청시간</th>
@@ -58,28 +58,28 @@
                         <% arenroll.forEach(function(arenroll) { %>
                          <tr>
                           <td class="current">
-                             <div><%= arenroll.artwoonecurrent %></div>
+                             <div><%= arenroll.ardtwosixcurrent %></div>
                           </td>
                           <td class="arorop">
-                            <div><%= arenroll.twoone %></div>
+                            <div><%= arenroll.dtwosix %></div>
                           </td>
                           <td class="room">
-                           <div><%= arenroll.artwooneroom %></div>
+                           <div><%= arenroll.ardtwosixroom %></div>
                           </td>
                           <td class="purpose">
-                           <div><%= arenroll.artwoonepurpose %></div>
+                           <div><%= arenroll.ardtwosixpurpose %></div>
                           </td>
                           <td class="name">
-                            <div><%= arenroll.artwoonename %></div>
+                            <div><%= arenroll.ardtwosixname %></div>
                           </td>
                           <td class="sort">
-                           <div><%= arenroll.artwoonesort %></div>
+                           <div><%= arenroll.ardtwosixsort %></div>
                           </td>
                           <td class="sex">
-                           <div><%= arenroll.artwoonesex %></div>
+                           <div><%= arenroll.ardtwosixsex %></div>
                           </td>
                           <td class="currentgrade">
-                           <div><%= arenroll.artwoonecurrentgrade %></div>
+                           <div><%= arenroll.ardtwosixcurrentgrade %></div>
                           </td>
                         <% }) %>
 
@@ -90,26 +90,26 @@
 
                       * 세미나실
                       <div class="form-group">
-                          <input class="form-control" placeholder="" id="artwooneroom" name="artwooneroom" value="2-1" type="text" readonly>
+                          <input class="form-control" placeholder="" id="ardtwosixroom" name="ardtwosixroom" value="2-6" type="text" readonly>
                           -> 위의 신청현황을 잘 보고 신청하세요! <br> -> 표의 맨 위에 있는 학생이 속한 동아리만 신청 가능합니다.
                       </div>
 
                       * (필수입력 아님) 이용목적
                       <div class="form-group">
                         <div class="form-group">
-                            <input class="form-control" placeholder="대표학생만 입력하세요" value="" id="artwoonepurpose" name="artwoonepurpose" type="text">
+                            <input class="form-control" placeholder="대표학생만 입력하세요" value="" id="ardtwosixpurpose" name="ardtwosixpurpose" type="text">
                             -> 동아리 : 동아리명<br> -> 동아리는 아닌데 여러 명이 신청하는 경우 : 공통의 이용목적(ex. 한국사 수행)을 입력해주세요.
                         </div>
                       </div>
 
                       * 이름
                       <div class="form-group">
-                          <input class="form-control" placeholder="반드시 생기부에 입력된 이름이랑 같아야 합니다." id="artwoonename" name="artwoonename" type="text">
+                          <input class="form-control" placeholder="반드시 생기부에 입력된 이름이랑 같아야 합니다." id="ardtwosixname" name="ardtwosixname" type="text">
                       </div>
 
                       * 계열
                       <div class="form-group">
-                        <select class="form-control" id="artwoonesort" name="artwoonesort" type="text">
+                        <select class="form-control" id="ardtwosixsort" name="ardtwosixsort" type="text">
                           <option>국내</option>
                           <option>국제</option>
                         </select>
@@ -117,7 +117,7 @@
 
                       * 성별
                       <div class="form-group">
-                        <select class="form-control" id="artwoonesex" name="artwoonesex" type="text">
+                        <select class="form-control" id="ardtwosixsex" name="ardtwosixsex" type="text">
                           <option>남자</option>
                           <option>여자</option>
                         </select>
@@ -125,7 +125,7 @@
 
                       * 학년
                       <div class="form-group">
-                        <select class="form-control" id="artwoonecurrentgrade" name="artwoonecurrentgrade" type="text">
+                        <select class="form-control" id="ardtwosixcurrentgrade" name="ardtwosixcurrentgrade" type="text">
                           <option>1</option>
                           <option>2</option>
                           <option>3</option>

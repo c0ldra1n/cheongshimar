@@ -73,11 +73,166 @@ function leadingZeros(n, digits) {
   return zero + n;
 }
 
-//
-//아래는 오늘 날짜/시간 구현 코드 시작
-function realtimeClockar() {
+//아래는 오늘 날짜/시간 구현 코드 시작ar
+function realtimeClocktwoone() {
   document.getElementById("artwoonecurrent").value = getTimeStamp();
-  setTimeout("realtimeClockar()", 1000);
+  setTimeout("realtimeClocktwoone()", 1000);
+}
+
+function getTimeStamp() {
+  var d = new Date();
+  var s =
+    leadingZeros(d.getHours(), 2) +
+    leadingZeros(d.getMinutes(), 2) +
+    leadingZeros(d.getSeconds(), 2);
+  return s;
+}
+
+function leadingZeros(n, digits) {
+  var zero = '';
+  n = n.toString();
+
+  if (n.length < digits) {
+    for (i = 0; i < digits - n.length; i++)
+      zero += '0';
+  }
+  return zero + n;
+}
+
+//아래는 오늘 날짜/시간 구현 코드 시작
+function realtimeClocktwotwo() {
+  document.getElementById("artwotwocurrent").value = getTimeStamp();
+  setTimeout("realtimeClocktwotwo()", 1000);
+}
+
+function getTimeStamp() {
+  var d = new Date();
+  var s =
+    leadingZeros(d.getHours(), 2) +
+    leadingZeros(d.getMinutes(), 2) +
+    leadingZeros(d.getSeconds(), 2);
+  return s;
+}
+
+function leadingZeros(n, digits) {
+  var zero = '';
+  n = n.toString();
+
+  if (n.length < digits) {
+    for (i = 0; i < digits - n.length; i++)
+      zero += '0';
+  }
+  return zero + n;
+}
+
+//아래는 오늘 날짜/시간 구현 코드 시작
+function realtimeClocktwothree() {
+  document.getElementById("artwothreecurrent").value = getTimeStamp();
+  setTimeout("realtimeClocktwothree()", 1000);
+}
+
+function getTimeStamp() {
+  var d = new Date();
+  var s =
+    leadingZeros(d.getHours(), 2) +
+    leadingZeros(d.getMinutes(), 2) +
+    leadingZeros(d.getSeconds(), 2);
+  return s;
+}
+
+function leadingZeros(n, digits) {
+  var zero = '';
+  n = n.toString();
+
+  if (n.length < digits) {
+    for (i = 0; i < digits - n.length; i++)
+      zero += '0';
+  }
+  return zero + n;
+}
+
+//아래는 오늘 날짜/시간 구현 코드 시작
+function realtimeClocktwofour() {
+  document.getElementById("artwofourcurrent").value = getTimeStamp();
+  setTimeout("realtimeClocktwofour()", 1000);
+}
+
+function getTimeStamp() {
+  var d = new Date();
+  var s =
+    leadingZeros(d.getHours(), 2) +
+    leadingZeros(d.getMinutes(), 2) +
+    leadingZeros(d.getSeconds(), 2);
+  return s;
+}
+
+function leadingZeros(n, digits) {
+  var zero = '';
+  n = n.toString();
+
+  if (n.length < digits) {
+    for (i = 0; i < digits - n.length; i++)
+      zero += '0';
+  }
+  return zero + n;
+}
+
+//아래는 오늘 날짜/시간 구현 코드 시작
+function realtimeClocktwofive() {
+  document.getElementById("artwofivecurrent").value = getTimeStamp();
+  setTimeout("realtimeClocktwofive()", 1000);
+}
+
+function getTimeStamp() {
+  var d = new Date();
+  var s =
+    leadingZeros(d.getHours(), 2) +
+    leadingZeros(d.getMinutes(), 2) +
+    leadingZeros(d.getSeconds(), 2);
+  return s;
+}
+
+function leadingZeros(n, digits) {
+  var zero = '';
+  n = n.toString();
+
+  if (n.length < digits) {
+    for (i = 0; i < digits - n.length; i++)
+      zero += '0';
+  }
+  return zero + n;
+}
+
+//아래는 오늘 날짜/시간 구현 코드 시작
+function realtimeClocktwosix() {
+  document.getElementById("artwosixcurrent").value = getTimeStamp();
+  setTimeout("realtimeClocktwosix()", 1000);
+}
+
+function getTimeStamp() {
+  var d = new Date();
+  var s =
+    leadingZeros(d.getHours(), 2) +
+    leadingZeros(d.getMinutes(), 2) +
+    leadingZeros(d.getSeconds(), 2);
+  return s;
+}
+
+function leadingZeros(n, digits) {
+  var zero = '';
+  n = n.toString();
+
+  if (n.length < digits) {
+    for (i = 0; i < digits - n.length; i++)
+      zero += '0';
+  }
+  return zero + n;
+}
+
+//아래는 오늘 날짜/시간 구현 코드 시작
+function realtimeClockorchestra() {
+  document.getElementById("arorchestracurrent").value = getTimeStamp();
+  setTimeout("realtimeClockorchestra()", 1000);
 }
 
 function getTimeStamp() {
@@ -103,7 +258,7 @@ function leadingZeros(n, digits) {
 // 테이블
 $(document).ready(function() {
     $('#enrolltable').DataTable( {
-        "order": [[ 3, "desc" ]]
+        "order": [[ 0, "asc" ]]
     } );
     $('table.display').DataTable();
 } );
@@ -119,12 +274,15 @@ $(document).ready(function() {
         .appendTo( '#hiddentable_wrapper .col-sm-6:eq(0)' );
 } );
 
-//
+//2-1신청 테이블
+
+
+// 신청 수정 버튼
 todayy = new Date();
 c_time = leadingZeros(todayy.getHours(), 2) +
          leadingZeros(todayy.getMinutes(), 2);
 
-if (c_time >=1300 && c_time <=2159)
+if (c_time >=1000 && c_time <=2159)
 {
   $("#submitbtn").show();
   $("#alertbtn").hide();

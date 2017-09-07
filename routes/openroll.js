@@ -20,7 +20,7 @@ router.get("/opnew", function(req, res){
 router.post("/", function(req, res){
  OPEnroll.create(req.body, function(err, openroll){
   if(err) return res.json(err);
-  res.redirect("/");
+  res.redirect("openroll");
  });
 });
 
