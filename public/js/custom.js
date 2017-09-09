@@ -118,7 +118,7 @@ $(document).ready(function() {
         .appendTo( '#hiddentable_wrapper .col-sm-6:eq(0)' );
 } );
 
-// 신청 수정 버튼
+// 신청 버튼 시간 제한
 todayy = new Date();
 c_time = leadingZeros(todayy.getHours(), 2) +
          leadingZeros(todayy.getMinutes(), 2);
@@ -133,35 +133,7 @@ if (c_time >=1700 && c_time <=2159)
   $("#alertbtn").show();
 }
 
-//2-1 신청
-$(document).ready(function() {
-  $(".search").ready(function () {
-    var searchTerm = $(".search").val();
-    var listItem = $('.results tbody').children('tr');
-    var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
-
-  $.extend($.expr[':'], {'containsi': function(elem, i, match, array){
-        return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
-    }
-  });
-
-  $(".results tbody tr").not(":containsi('" + searchSplit + "')").each(function(e){
-    $(this).attr('visible','false');
-  });
-
-  $(".results tbody tr:containsi('" + searchSplit + "')").each(function(e){
-    $(this).attr('visible','true');
-  });
-
-  var jobCount = $('.results tbody tr[visible="true"]').length;
-    $('.counter').text(jobCount + ' item');
-
-  if(jobCount == '0') {$('.no-result').show();}
-    else {$('.no-result').hide();}
-		  });
-});
-
-//2-2 신청
+//
 $(document).ready(function() {
   $(".search").ready(function () {
     var searchTerm = $(".search").val();
@@ -195,5 +167,4 @@ function setEvent(){
         alert("신청되었습니다.");
     });
 }
-setEvent();
 setEvent();
