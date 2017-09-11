@@ -133,7 +133,7 @@ if (c_time >=1700 && c_time <=2159)
   $("#alertbtn").show();
 }
 
-//
+//ar 신청시 자동 현황 검색 기능
 $(document).ready(function() {
   $(".search").ready(function () {
     var searchTerm = $(".search").val();
