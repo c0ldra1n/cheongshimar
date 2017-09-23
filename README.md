@@ -5,7 +5,7 @@
 - 개발자 : 이재준
 - 라이센스 : MIT LICENSE
 - 개발시 사용한 개발 에셋들<br>
-- Datatables <br>
-- Bootstrap 3.3.7 <br>
-- Google Fonts - Noto Sans <br>
-- Font Awesome
+-- Datatables <br>
+-- Bootstrap 3.3.7 <br>
+-- Google Fonts - Noto Sans <br>
+-- Font Awesome
