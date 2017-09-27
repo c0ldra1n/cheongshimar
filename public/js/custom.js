@@ -126,9 +126,11 @@ c_time = leadingZeros(todayy.getHours(), 2) +
 if (c_time >=1700 && c_time <=2159)
 {
   $("#submitbtn").show();
+  $("#alertbtn").attr("disabled", true);
   $("#alertbtn").hide();
 } else
 {
+  $("#submitbtn").attr("disabled", true);
   $("#submitbtn").hide();
   $("#alertbtn").show();
 }
