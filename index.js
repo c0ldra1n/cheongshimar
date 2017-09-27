@@ -5,6 +5,7 @@ var bodyParser  = require("body-parser");
 var methodOverride = require("method-override");
 var fs = require('fs');
 var app = express();
+var schedule = require('node-schedule');
 
 // DB setting
 mongoose.connect(process.env.MONGO_URI, { useMongoClient: true });
@@ -43,6 +44,11 @@ app.use("/arenroll", require("./routes/arenroll"));
 app.use("/openroll", require("./routes/openroll"));
 app.use("/kingofcsia@ar", require("./routes/kingofcsia@ar"));
 app.use("/kingofcsia@op", require("./routes/kingofcsia@op"));
+
+var scheduler = schedule.scheduleJob('0 0 * * *', function(){
+  db.collection('openrolls').drop();
+  db.collection('arenrolls').drop();
+});
 
 // Port setting
 var port = process.env.PORT || 3000;

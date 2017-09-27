@@ -4,7 +4,7 @@
 - 개발 기간 : 07/14/2017 ~ 09/04/2017
 - 개발자 : 이재준
 - 라이센스 : MIT LICENSE
-- 개발시 사용한 Assets :
+- 개발 Assets :
   - Datatables
   - jQuery
   - Bootstrap 3.3.7 version
