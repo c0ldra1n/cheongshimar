@@ -16,6 +16,10 @@ db.once("open", function(){
 db.on("error", function(err){
  console.log("DB ERROR : ", err);
 });
+var scheduler = schedule.scheduleJob('0 0 * * *', function(){
+  db.collection('openrolls').drop();
+  db.collection('arenrolls').drop();
+});
 
 // Other settings
 app.set("view engine", "ejs");
@@ -49,9 +53,4 @@ app.use("/kingofcsia@op", require("./routes/kingofcsia@op"));
 var port = process.env.PORT || 3000;
 app.listen(port, function(){
   console.log('Server On!!!');
-});
-
-var scheduler = schedule.scheduleJob('0 0 * * *', function(){
-  db.collection('openrolls').drop();
-  db.collection('arenrolls').drop();
 });
