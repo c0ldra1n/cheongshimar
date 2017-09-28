@@ -9,7 +9,6 @@ var schedule = require('node-schedule');
 
 // DB setting
 mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
-
 var db = mongoose.connection;
 db.once("open", function(){
  console.log("DB connected");
@@ -18,7 +17,8 @@ db.on("error", function(err){
  console.log("DB ERROR : ", err);
 });
 
-var scheduler = schedule.scheduleJob('0 0 * * *', function(){
+// Scheduling 
+var scheduler = schedule.scheduleJob('59 23 * * *', function(){
   db.collection('openrolls').drop();
   db.collection('arenrolls').drop();
 });
