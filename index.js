@@ -18,7 +18,7 @@ db.on("error", function(err){
 });
 
 // Scheduling 
-var scheduler = schedule.scheduleJob('59 23 * * *', function(){
+var scheduler = schedule.scheduleJob('0 9 * * *', function(){
   db.collection('openrolls').drop();
   db.collection('arenrolls').drop();
 });
