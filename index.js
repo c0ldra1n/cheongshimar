@@ -17,8 +17,8 @@ db.on("error", function(err){
  console.log("DB ERROR : ", err);
 });
 
-// Scheduling 
-var scheduler = schedule.scheduleJob('0 9 * * *', function(){
+// Scheduling
+var scheduler = schedule.scheduleJob('0 10 * * *', function(){
   db.collection('openrolls').drop();
   db.collection('arenrolls').drop();
 });
