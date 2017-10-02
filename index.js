@@ -17,10 +17,16 @@ db.on("error", function(err){
  console.log("DB ERROR : ", err);
 });
 
+<<<<<<< HEAD
 // Scheduling
 var scheduler = schedule.scheduleJob('0 10 * * *', function(){
+=======
+// Scheduling 
+var scheduler = schedule.scheduleJob('00 00 10 * * 1-5', function(){
+>>>>>>> 1002
   db.collection('openrolls').drop();
   db.collection('arenrolls').drop();
+  console.log("현재 시각을 기준으로 DB가 초기화되었습니다.");
 });
 
 // Other settings
