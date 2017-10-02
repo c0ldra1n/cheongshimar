@@ -6,6 +6,10 @@ var methodOverride = require("method-override");
 var fs = require('fs');
 var app = express();
 var schedule = require('node-schedule');
+var favicon = require('serve-favicon');
+
+//파비콘 설정
+app.use(favicon(path.join(__dirname, 'public/img', 'favicon.ico')));
 
 // DB setting
 mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
