@@ -10,8 +10,7 @@
     "forever": "^0.15.3",
     "method-override": "^2.3.9",
     "mongoose": "^4.11.10",
-    "node-schedule": "^1.2.5",
-    "serve-favicon": "^2.4.5"
+    "node-schedule": "^1.2.5"
   },
   "devDependencies": {},
   "scripts": {

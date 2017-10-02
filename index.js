@@ -6,10 +6,6 @@ var methodOverride = require("method-override");
 var fs = require('fs');
 var app = express();
 var schedule = require('node-schedule');
-var favicon = require('serve-favicon');
-
-//파비콘 설정
-app.use(favicon(path.join(__dirname, 'public/img', 'favicon.ico')));
 
 // DB setting
 mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
@@ -30,7 +26,7 @@ var scheduler = schedule.scheduleJob('00 00 10 * * 1-5', function(){
 
 // Other settings
 app.set("view engine", "ejs");
-app.use(express.static(__dirname+"/public"));
+app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
