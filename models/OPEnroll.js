@@ -8,6 +8,7 @@ var openrollSchema = mongoose.Schema({
  opsort:{type:String, required:true},
  opsex:{type:String, required:true},
  opcurrentgrade:{type:String, required:true},
+ oppassword:{type:Number, required:true},
 },{
  toObject:{virtuals:true}
 });

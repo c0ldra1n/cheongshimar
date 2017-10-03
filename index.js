@@ -18,7 +18,7 @@ db.on("error", function(err){
 });
 
 // Scheduling 
-var scheduler = schedule.scheduleJob('00 00 10 * * 1-5', function(){
+var scheduler = schedule.scheduleJob('0 10 * * *', function(){
   db.collection('openrolls').drop();
   db.collection('arenrolls').drop();
   console.log("현재 시각을 기준으로 DB가 초기화되었습니다.");
@@ -31,6 +31,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 
+// 2층 세미나실 지도
 app.get('/roomnumber2', function (req, res) {
   fs.readFile('public/img/roomnumber2.jpg', function (error, data) {
     res.writeHead(200, {'Content-Type': 'image/jpeg'});
@@ -38,6 +39,7 @@ app.get('/roomnumber2', function (req, res) {
   });
 });
 
+// 5층 세미나실 지도
 app.get('/roomnumber5', function (req, res) {
   fs.readFile('public/img/roomnumber5.jpg', function (error, data) {
     res.writeHead(200, {'Content-Type': 'image/jpeg'});

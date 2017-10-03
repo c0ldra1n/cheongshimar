@@ -150,6 +150,23 @@ router.post("/", function(req, res){
  });
 });
 
+// edit
+router.get("/:id/edit", function(req, res){
+ AREnroll.findOne({_id:req.params.id}, function(err, arenroll){
+  if(err) return res.json(err);
+  res.render("arenroll/aredit", {arenroll:arenroll});
+ });
+});
+   
+// update
+router.put("/:id", function(req, res){
+ req.body.updatedAt = Date.now();
+ AREnroll.findOneAndUpdate({_id:req.params.id}, req.body, function(err, arenroll){
+  if(err) return res.json(err);
+  res.redirect("/arenroll/"+req.params.id);
+ });
+});
+
 // show
 router.get("/:id", function(req, res){
  AREnroll.findOne({_id:req.params.id}, function(err, arenroll){

@@ -107,7 +107,7 @@ $(document).ready(function() {
     $('table.display').DataTable();
 } );
 
-// 히든 테이블
+// 히든 테이블 - 관리자
 $(document).ready(function() {
     var table = $('#hiddentable').DataTable( {
         lengthChange: false,
@@ -130,9 +130,9 @@ if (c_time >=1700 && c_time <=2159)
   $("#alertbtn").hide();
 } else
 {
+  $("#alertbtn").show();
   $("#submitbtn").attr("disabled", true);
   $("#submitbtn").hide();
-  $("#alertbtn").show();
 }
 
 //ar 신청시 자동 현황 검색 기능
@@ -156,14 +156,14 @@ $(document).ready(function() {
   });
 
   var jobCount = $('.results tbody tr[visible="true"]').length;
-    $('.counter').text(jobCount + ' item');
+    $('.counter').text(jobCount + '개의 세미나실 데이터 검색됨');
 
   if(jobCount == '0') {$('.no-result').show();}
     else {$('.no-result').hide();}
 		  });
 });
 
-//
+// 중복 서브밋 방지
 function setEvent(){
     $("#submitbtn").unbind("click").bind("click",function(){
         alert("신청되었습니다.");
@@ -171,3 +171,11 @@ function setEvent(){
 }
 setEvent();
 setEvent();
+
+//엔터키 막기
+$(function() { 
+  $("input:text").keydown(function(evt) { 
+    if (evt.keyCode == 13) 
+    return false; 
+  }); 
+});

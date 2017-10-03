@@ -10,6 +10,7 @@ var arenrollSchema = mongoose.Schema({
  arsort:{type:String, required:true},
  arsex:{type:String, required:true},
  arcurrentgrade:{type:String, required:true},
+ arpassword:{type:Number, required:true}, 
 },{
  toObject:{virtuals:true}
 });
