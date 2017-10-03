@@ -17,8 +17,7 @@ db.on("error", function(err){
  console.log("DB ERROR : ", err);
 });
 
-// Scheduling 
-var scheduler = schedule.scheduleJob('0 10 * * *', function(){
+var job = new CronJob('00 45 10 * * *', function() {
   db.collection('openrolls').drop();
   db.collection('arenrolls').drop();
   console.log("현재 시각을 기준으로 DB가 초기화되었습니다.");
