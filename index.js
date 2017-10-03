@@ -5,7 +5,7 @@ var bodyParser  = require("body-parser");
 var methodOverride = require("method-override");
 var fs = require('fs');
 var app = express();
-var schedule = require('node-schedule');
+var cron = require('cron');
 
 // DB setting
 mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
@@ -17,8 +17,7 @@ db.on("error", function(err){
  console.log("DB ERROR : ", err);
 });
 
-// Scheduling 
-var scheduler = schedule.scheduleJob('5 10 * * *', function(){
+new cron.CronJob('35 10 * * *', function(){
   db.collection('openrolls').drop();
   db.collection('arenrolls').drop();
   console.log("현재 시각을 기준으로 DB가 초기화되었습니다.");
