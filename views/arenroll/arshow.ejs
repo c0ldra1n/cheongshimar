@@ -9,13 +9,7 @@
     </div>
 
     <div class="row">
-        <div class="col-lg-12">
-         <div id="backsubmitbtn">
-           <form action="/arenroll/<%= arenroll._id %>?_method=delete" method="post">
-             <a class="btn btn-danger" onclick="confirm('정말로 삭제하시겠습니까?')?this.parentElement.submit():null;">삭제</a>
-           </form>
-         </div>
-          <br>          
+        <div class="col-lg-12">        
 
           <h3 id="showshow">
           <div>신청시각 : <%= arenroll.arcurrent %></div>                
@@ -27,16 +21,19 @@
           <div>성별 : <%= arenroll.arsex %></div>
           <div>학년 : <%= arenroll.arcurrentgrade %></div>
           </h3>
-
-          <br>
-
+          <div class="form-group">
+              <input class="form-control" id="hello" value="<%= arenroll.arpassword %>" disabled>
+          </div>
           <div id="backsubmitbtn">
+            <form action="/arenroll/<%= arenroll._id %>?_method=delete" id="deleteform" method="post">
+              <a class="btn btn-danger" onclick="deleteff()">삭제</a>
+            </form>
             <a class="btn btn-default" href="/arenroll">뒤로가기</a>
-            <a class="btn btn-primary" href="/arenroll/<%= arenroll._id %>/edit">수정</a>
           </div>
 
           <br><br>
         </div>
     </div>
 </div>
-<% include ../parts/footer %>
+
+<% include ../parts/footerwithout %>

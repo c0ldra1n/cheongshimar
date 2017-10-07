@@ -51,7 +51,7 @@ $(function() {
 function realtimeClockop() {
   document.getElementById("opcurrent").value = getTimeStamp();
   setTimeout("realtimeClockop()", 1000);
-}
+};
 
 function getTimeStamp() {
   var d = new Date();
@@ -60,7 +60,7 @@ function getTimeStamp() {
     leadingZeros(d.getMinutes(), 2) +
     leadingZeros(d.getSeconds(), 2);
   return s;
-}
+};
 
 function leadingZeros(n, digits) {
   var zero = '';
@@ -69,15 +69,15 @@ function leadingZeros(n, digits) {
   if (n.length < digits) {
     for (i = 0; i < digits - n.length; i++)
       zero += '0';
-  }
+  };
   return zero + n;
-}
+};
 
 //아래는 오늘 날짜/시간 구현 코드 시작ar
 function realtimeClockar() {
   document.getElementById("arcurrent").value = getTimeStamp();
   setTimeout("realtimeClockar()", 1000);
-}
+};
 
 function getTimeStamp() {
   var d = new Date();
@@ -86,7 +86,7 @@ function getTimeStamp() {
     leadingZeros(d.getMinutes(), 2) +
     leadingZeros(d.getSeconds(), 2);
   return s;
-}
+};
 
 function leadingZeros(n, digits) {
   var zero = '';
@@ -95,9 +95,9 @@ function leadingZeros(n, digits) {
   if (n.length < digits) {
     for (i = 0; i < digits - n.length; i++)
       zero += '0';
-  }
+  };
   return zero + n;
-}
+};
 
 // 테이블
 $(document).ready(function() {
@@ -156,7 +156,7 @@ $(document).ready(function() {
   });
 
   var jobCount = $('.results tbody tr[visible="true"]').length;
-    $('.counter').text(jobCount + '개의 세미나실 데이터 검색됨');
+    $('.counter').text(jobCount + '개의 세미나실 신청자 데이터 검색됨');
 
   if(jobCount == '0') {$('.no-result').show();}
     else {$('.no-result').hide();}
@@ -164,7 +164,7 @@ $(document).ready(function() {
 });
 
 // 중복 서브밋 방지
-function setEvent(){
+function setEvent() {
     $("#submitbtn").unbind("click").bind("click",function(){
         alert("신청되었습니다.");
     });
@@ -179,3 +179,22 @@ $(function() {
     return false; 
   }); 
 });
+
+//
+function deleteff() {
+  var pwpw = document.getElementById("hello").value;
+  var psswd = prompt("비밀번호 입력", "");
+  if (psswd == pwpw) {
+    confirm('정말로 삭제하시겠습니까?')?document.getElementById("deleteform").submit():null;
+  } else {
+    alert("비밀번호가 다릅니다!");
+  };
+};
+
+//
+$("#hello").hide();
+
+// 5분마다 새로고침
+refresh = setInterval(function() {
+  location.reload();
+}, 300000);

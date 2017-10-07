@@ -5,7 +5,6 @@ var bodyParser  = require("body-parser");
 var methodOverride = require("method-override");
 var fs = require('fs');
 var app = express();
-var CronJob = require('cron').CronJob;
 
 // DB setting
 mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
@@ -15,12 +14,6 @@ db.once("open", function(){
 });
 db.on("error", function(err){
  console.log("DB ERROR : ", err);
-});
-
-var job = new CronJob('00 00 11 * * *', function() {
-  db.collection('openrolls').drop();
-  db.collection('arenrolls').drop();
-  console.log("현재 시각을 기준으로 DB가 초기화되었습니다.");
 });
 
 // Other settings
@@ -50,6 +43,7 @@ app.get('/roomnumber5', function (req, res) {
 app.use("/", require("./routes/main"));
 app.use("/arenroll", require("./routes/arenroll"));
 app.use("/openroll", require("./routes/openroll"));
+app.use("/arworking", require("./routes/arenroll"));
 app.use("/kingofcsia@ar", require("./routes/kingofcsia@ar"));
 app.use("/kingofcsia@op", require("./routes/kingofcsia@op"));
 
