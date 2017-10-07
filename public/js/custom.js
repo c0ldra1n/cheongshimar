@@ -47,6 +47,53 @@ $(function() {
     }
 });
 
+// 테이블
+$(document).ready(function() {
+    $('#enrolltable').DataTable( {
+        "order": [[ 0, "asc" ]]
+    } );
+    $('table.display').DataTable();
+} );
+
+// 히든 테이블 - 관리자
+$(document).ready(function() {
+    var table = $('#hiddentable').DataTable( {
+        lengthChange: false,
+        buttons: [ 'excel', 'print', 'colvis' ]
+    } );
+
+    table.buttons().container()
+        .appendTo( '#hiddentable_wrapper .col-sm-6:eq(0)' );
+} );
+
+//ar 신청시 자동 현황 검색 기능
+$(document).ready(function() {
+  $(".search").ready(function () {
+    var searchTerm = $(".search").val();
+    var listItem = $('.results tbody').children('tr');
+    var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
+
+  $.extend($.expr[':'], {'containsi': function(elem, i, match, array){
+        return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+    }
+  });
+
+  $(".results tbody tr").not(":containsi('" + searchSplit + "')").each(function(e){
+    $(this).attr('visible','false');
+  });
+
+  $(".results tbody tr:containsi('" + searchSplit + "')").each(function(e){
+    $(this).attr('visible','true');
+  });
+
+  var jobCount = $('.results tbody tr[visible="true"]').length;
+    $('.counter').text(jobCount + '개의 세미나실 신청자 데이터 검색됨');
+
+  if(jobCount == '0') {$('.no-result').show();}
+    else {$('.no-result').hide();}
+		  });
+});
+
 //아래는 오늘 날짜/시간 구현 코드 시작op
 function realtimeClockop() {
   document.getElementById("opcurrent").value = getTimeStamp();
@@ -99,25 +146,6 @@ function leadingZeros(n, digits) {
   return zero + n;
 };
 
-// 테이블
-$(document).ready(function() {
-    $('#enrolltable').DataTable( {
-        "order": [[ 0, "asc" ]]
-    } );
-    $('table.display').DataTable();
-} );
-
-// 히든 테이블 - 관리자
-$(document).ready(function() {
-    var table = $('#hiddentable').DataTable( {
-        lengthChange: false,
-        buttons: [ 'excel', 'print', 'colvis' ]
-    } );
-
-    table.buttons().container()
-        .appendTo( '#hiddentable_wrapper .col-sm-6:eq(0)' );
-} );
-
 // 신청 버튼 시간 제한
 todayy = new Date();
 c_time = leadingZeros(todayy.getHours(), 2) +
@@ -135,33 +163,10 @@ if (c_time >=1700 && c_time <=2159)
   $("#submitbtn").hide();
 }
 
-//ar 신청시 자동 현황 검색 기능
-$(document).ready(function() {
-  $(".search").ready(function () {
-    var searchTerm = $(".search").val();
-    var listItem = $('.results tbody').children('tr');
-    var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
-
-  $.extend($.expr[':'], {'containsi': function(elem, i, match, array){
-        return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
-    }
-  });
-
-  $(".results tbody tr").not(":containsi('" + searchSplit + "')").each(function(e){
-    $(this).attr('visible','false');
-  });
-
-  $(".results tbody tr:containsi('" + searchSplit + "')").each(function(e){
-    $(this).attr('visible','true');
-  });
-
-  var jobCount = $('.results tbody tr[visible="true"]').length;
-    $('.counter').text(jobCount + '개의 세미나실 신청자 데이터 검색됨');
-
-  if(jobCount == '0') {$('.no-result').show();}
-    else {$('.no-result').hide();}
-		  });
-});
+// 5분마다 새로고침
+refresh = setInterval(function() {
+  location.reload();
+}, 300000);
 
 // 중복 서브밋 방지
 function setEvent() {
@@ -193,8 +198,3 @@ function deleteff() {
 
 //
 $("#hello").hide();
-
-// 5분마다 새로고침
-refresh = setInterval(function() {
-  location.reload();
-}, 300000);
