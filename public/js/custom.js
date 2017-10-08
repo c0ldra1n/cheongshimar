@@ -163,10 +163,10 @@ if (c_time >=1700 && c_time <=2159) {
   $("#deleteform").hide();
 };
 
-// 5분마다 새로고침
+// 3분마다 새로고침
 refresh = setInterval(function() {
   location.reload();
-}, 300000);
+}, 180000);
 
 // 중복 서브밋 방지
 function setEvent() {
@@ -184,18 +184,3 @@ $(function() {
     return false; 
   }); 
 });
-
-//
-function deleteff() {
-  var pwpw = document.getElementById("hello").value;
-  var psswd = prompt("비밀번호 입력", "");
-  if (psswd == pwpw) {
-    confirm('정말로 삭제하시겠습니까?')?document.getElementById("deleteform").submit():null;
-  } else {
-    alert("비밀번호가 다릅니다!");
-  };
-};
-
-//
-$("#hello").hide();
-$("#hallo").hide();
