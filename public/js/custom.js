@@ -153,12 +153,14 @@ c_time = leadingZeros(todayy.getHours(), 2) +
 
 if (c_time >=1700 && c_time <=2159) {
   $("#submitbtn").show();
+  $("#deleteform").show();
   $("#alertbtn").attr("disabled", true);
   $("#alertbtn").hide();
 } else {
   $("#alertbtn").show();
   $("#submitbtn").attr("disabled", true);
   $("#submitbtn").hide();
+  $("#deleteform").hide();
 };
 
 // 5분마다 새로고침
@@ -196,3 +198,4 @@ function deleteff() {
 
 //
 $("#hello").hide();
+$("#hallo").hide();
