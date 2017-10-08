@@ -3,14 +3,24 @@
 
 <script type="text/javascript">
     function deleteff() {
-        var pwpw = "<%= openroll.oppassword %>";
-        var psswd = prompt("비밀번호 입력", "");
-        if (psswd == pwpw) {
+        var pwpw = "<%= openroll.oppassword %>" + "223ASDFSDFLSD@#$)#5235@$^%^$##@#$DFGDF4423398442984492374%&%#$%#$2389DFSGJ$##@%^*%^SD38384234235734957348957934759";
+        var psswd0 = prompt("패스워드 검사 절차", "");
+        if (psswd0.length <= 4) {
+            alert("승인");
+            return deleteff1();
+        } else {
+            alert("승인 거부됨");
+        };
+
+        function deleteff1() {
+        var psswd1 = prompt("비밀번호 입력", "") + "223ASDFSDFLSD@#$)#5235@$^%^$##@#$DFGDF4423398442984492374%&%#$%#$2389DFSGJ$##@%^*%^SD38384234235734957348957934759";
+        if (psswd1 == pwpw && psswd0.length <= 4) {
           confirm('정말로 삭제하시겠습니까?')?document.getElementById("deleteform").submit():null;
         } else {
-          alert("비밀번호가 다릅니다!");
+          alert("패스워드가 틀렸어요.. (저런;;)");
         };
-      };
+    };
+};
 </script>
 
 <div id="page-wrapper">

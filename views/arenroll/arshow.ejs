@@ -3,14 +3,25 @@
 
 <script type="text/javascript">
     function deleteff() {
-        var pwpw = "<%= arenroll.arpassword %>";
-        var psswd = prompt("비밀번호 입력", "");
-        if (psswd == pwpw) {
+        var psswd0 = prompt("1차 패스워드 Validation", "");
+        if (psswd0.length == 4) {
+            alert("승인");
+            return deleteff1();
+        } else {
+            alert("승인 거부됨");
+        };
+
+        function deleteff1() {
+        var pwinput = prompt("2차 패스워드 Validation", "");
+        var encrypt = "4895734890257978034878923748789015873289457902908490317017289371283978094348579340578345834790872382934<%= arenroll.arpassword %>55559384758345722555522293057892075555332255556777472355557894555506475555136012873896555534905555827390574918382955553337227277";
+        var trans = encrypt.substr(103, 4);
+        if (trans == pwinput && pwinput.length == 4) {
           confirm('정말로 삭제하시겠습니까?')?document.getElementById("deleteform").submit():null;
         } else {
-          alert("비밀번호가 다릅니다!");
+          alert("패스워드가 틀렸어요.. (저런;;)");
         };
-      };
+    };
+};
 </script>
 
 <div id="page-wrapper">
