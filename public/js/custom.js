@@ -145,7 +145,7 @@ function leadingZeros(n, digits) {
   };
   return zero + n;
 };
-
+/*
 // 신청 버튼 시간 제한
 todayy = new Date();
 c_time = leadingZeros(todayy.getHours(), 2) +
@@ -161,7 +161,7 @@ if (c_time >=1700 && c_time <=2159) {
   $("#submitbtn").attr("disabled", true);
   $("#submitbtn").hide();
   $("#deleteform").hide();
-};
+};*/
 
 // 3분마다 새로고침
 refresh = setInterval(function() {
@@ -173,7 +173,7 @@ function setEvent() {
     $("#submitbtn").unbind("click").bind("click",function(){
         alert("신청되었습니다.");
     });
-}
+};
 setEvent();
 setEvent();
 
