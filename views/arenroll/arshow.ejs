@@ -2,29 +2,26 @@
 <% include ../parts/othernav %>
 
 <script type="text/javascript">
+    function deleteff() {
+        var psswd0 = prompt("1차 패스워드 Validation", "");
+        if (psswd0.length == 4) {
+            alert("승인");
+            return deleteff1();
+        } else {
+            alert("승인 거부됨");
+        };
 
-function attemptDelete() {
-
-		var pswd = prompt("비밀번호 입력", "");
-		if(confirm('정말로 삭제하시겠습니까?')){
-		$.ajax({
-			method: "DELETE",
-			url: "/arenroll/<%= arenroll._id %>",
-			data: { arpassword: pswd}
-		}).done(function( msg ) {
-			if((JSON.parse(msg)).result == "success"){
-				alert("삭제했습니다.");
-				location.href = "/arenroll";
-			}else{
-				alert("패스워드가 틀렸어요.. (저런;;)");
-			}
-		});
-		}else {
-			return;
-		};
-
-	};
-
+        function deleteff1() {
+        var pwinput = prompt("2차 패스워드 Validation", "");
+        var encrypt = "4895734890257978034878923748789015873289457902908490317017289371283978094348579340578345834790872382934<%= arenroll.arpassword %>55559384758345722555522293057892075555332255556777472355557894555506475555136012873896555534905555827390574918382955553337227277";
+        var trans = encrypt.substr(103, 4);
+        if (trans == pwinput && pwinput.length == 4) {
+          confirm('정말로 삭제하시겠습니까?')?document.getElementById("deleteform").submit():null;
+        } else {
+          alert("패스워드가 틀렸어요.. (저런;;)");
+        };
+    };
+};
 </script>
 
 <div id="page-wrapper">
@@ -47,10 +44,12 @@ function attemptDelete() {
                 <div>학년 : <%= arenroll.arcurrentgrade %></div>
             </h3>
             
-			<div id="backsubmitbtn">
-				<a class="btn btn-danger" onclick="attemptDelete()">삭제</a>
-				<a class="btn btn-default" href="/arenroll">뒤로가기</a>
-			</div>
+            <div id="backsubmitbtn">
+                <form action="/arenroll/<%= arenroll._id %>?_method=delete" id="deleteform" method="post">
+                <a class="btn btn-danger" onclick="deleteff()">삭제</a>
+                </form>
+                <a class="btn btn-default" href="/arenroll">뒤로가기</a>
+            </div>
 
                 <br><br>
             </div>

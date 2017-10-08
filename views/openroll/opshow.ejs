@@ -2,57 +2,55 @@
 <% include ../parts/othernav %>
 
 <script type="text/javascript">
+    function deleteff() {
+        var pwpw = "<%= openroll.oppassword %>" + "223ASDFSDFLSD@#$)#5235@$^%^$##@#$DFGDF4423398442984492374%&%#$%#$2389DFSGJ$##@%^*%^SD38384234235734957348957934759";
+        var psswd0 = prompt("패스워드 검사 절차", "");
+        if (psswd0.length <= 4) {
+            alert("승인");
+            return deleteff1();
+        } else {
+            alert("승인 거부됨");
+        };
 
-	function attemptDelete() {
-
-		var pswd = prompt("비밀번호 입력", "");
-		if(confirm('정말로 삭제하시겠습니까?')){
-		$.ajax({
-			method: "DELETE",
-			url: "/openroll/<%= openroll._id %>",
-			data: { oppassword: pswd}
-		}).done(function( msg ) {
-			if((JSON.parse(msg)).result == "success"){
-				alert("삭제했습니다.");
-				location.href = "/openroll";
-			}else{
-				alert("패스워드가 틀렸어요.. (저런;;)");
-			}
-		});
-		}else {
-			return;
-		};
-
-	};
-
+        function deleteff1() {
+        var psswd1 = prompt("비밀번호 입력", "") + "223ASDFSDFLSD@#$)#5235@$^%^$##@#$DFGDF4423398442984492374%&%#$%#$2389DFSGJ$##@%^*%^SD38384234235734957348957934759";
+        if (psswd1 == pwpw && psswd0.length <= 4) {
+          confirm('정말로 삭제하시겠습니까?')?document.getElementById("deleteform").submit():null;
+        } else {
+          alert("패스워드가 틀렸어요.. (저런;;)");
+        };
+    };
+};
 </script>
 
 <div id="page-wrapper">
-	<div class="row">
-		<div class="col-lg-12">
-			<h1 class="page-header"> 선야 신청현황 보기 </h1>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header"> 선야 신청현황 보기 </h1>
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="col-lg-12">        
-			<h3 id="showshow">
-				<div>신청시각 : <%= openroll.opcurrent %></div>                
-				<div>분류 : <%= openroll.opop %></div>
-				<div>신청자 : <%= openroll.opname %></div>
-				<div>계열 : <%= openroll.opsort %></div>
-				<div>성별 : <%= openroll.opsex %></div>
-				<div>학년 : <%= openroll.opcurrentgrade %></div>
-			</h3>
+    <div class="row">
+        <div class="col-lg-12">        
+            <h3 id="showshow">
+                <div>신청시각 : <%= openroll.opcurrent %></div>                
+                <div>분류 : <%= openroll.opop %></div>
+                <div>신청자 : <%= openroll.opname %></div>
+                <div>계열 : <%= openroll.opsort %></div>
+                <div>성별 : <%= openroll.opsex %></div>
+                <div>학년 : <%= openroll.opcurrentgrade %></div>
+            </h3>
+            
+            <div id="backsubmitbtn">
+                <form action="/openroll/<%= openroll._id %>?_method=delete" id="deleteform" method="post">
+                <a class="btn btn-danger" onclick="deleteff()">삭제</a>
+                </form>
+                <a class="btn btn-default" href="/openroll">뒤로가기</a>
+            </div>
 
-			<div id="backsubmitbtn">
-				<a class="btn btn-danger" onclick="attemptDelete()">삭제</a>
-				<a class="btn btn-default" href="/openroll">뒤로가기</a>
-			</div>
-
-			<br><br>
-		</div>
-	</div>
+                <br><br>
+            </div>
+    </div>
 </div>
 
 <% include ../parts/footerwithout %>
