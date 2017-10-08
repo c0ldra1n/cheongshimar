@@ -157,7 +157,7 @@ router.get("/:id/edit", function(req, res){
   res.render("arenroll/aredit", {arenroll:arenroll});
  });
 });
-
+   
 // update
 router.put("/:id", function(req, res){
  req.body.updatedAt = Date.now();
